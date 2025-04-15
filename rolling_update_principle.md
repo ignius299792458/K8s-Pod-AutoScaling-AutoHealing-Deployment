@@ -21,14 +21,14 @@ nginx-deployment-96b9d695-ljzh7   1/1     Running   0          95m
 nginx-deployment-96b9d695-rqwhj   1/1     Running   0          95m
 nginx-deployment-96b9d695-vt8v7   1/1     Running   0          99m
 
-➜  echo "All the pods are running, So let so wrong changes, see rolling effect.."
-All the pods are running, So let so wrong changes, see rolling effect..
+➜  echo "All the pods are running, So lets do wrong changes, see rolling effect.."
+All the pods are running, So lets do wrong changes, see rolling effect..
 
 ➜  kubectl set image deployment/nginx-deployment -n nginx nginx=1.26.2
 deployment.apps/nginx-deployment image updated
 
-➜  echo "Here I apply wrong image tag which should be nginx=nginx:1.26.2, see K8s didn't apply this to all pods at once, to maintain zero down time"
-Here I apply wrong image tag which should be nginx=nginx:1.26.2, see K8s didn't apply this to all pods at once, to maintain zero down time
+➜  echo "Here I apply wrong image tag which should be nginx=nginx:1.26.2, see K8s didn't apply this to all pods at once, to maintain zero down-time"
+Here I apply wrong image tag which should be nginx=nginx:1.26.2, see K8s didn't apply this to all pods at once, to maintain zero down-time
 
 ➜  kubectl get pods -n nginx
 NAME                                READY   STATUS             RESTARTS   AGE
@@ -43,8 +43,8 @@ nginx-deployment-96b9d695-ljzh7     1/1     Running            0          98m
 nginx-deployment-96b9d695-rqwhj     1/1     Running            0          98m
 nginx-deployment-96b9d695-vt8v7     1/1     Running            0          102m
 
-➜  echo "There are 3 pods test and other are running and maintaining the availability"
-There are 3 pods test and other are running and maintaining the availability
+➜  echo "There are 3 pods tested and other are running and maintaining the full availability"
+There are 3 pods tested and other are running and maintaining the full availability
 
 ➜  kubectl set image deployment/nginx-deployment -n nginx nginx=nginx:1.26.2
 deployment.apps/nginx-deployment image updated
@@ -91,8 +91,8 @@ nginx-deployment-f58b5c699-g77qh   0/1     ContainerCreating   0          37s
 nginx-deployment-f58b5c699-n2mxh   0/1     ContainerCreating   0          37s
 nginx-deployment-f58b5c699-rtj8w   0/1     ContainerCreating   0          37s
 
-➜  echo "Its is no Auto healing"
-Its is no Auto healing
+➜  echo "Its now Auto healing..."
+Its now Auto healing...
 
 ➜  kubectl get pods -n nginx
 NAME                               READY   STATUS    RESTARTS   AGE
