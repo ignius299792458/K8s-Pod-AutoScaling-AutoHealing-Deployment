@@ -3,7 +3,7 @@
 Example as whole, `create deployment.yml file`, `apply deployment.yml` and `scaling up and down of nginx pod of nginx namespace`
 
 ```
-➜  nginx kubectl apply -f deployment.yml 
+➜  kubectl apply -f deployment.yml 
 Error from server (BadRequest): error when creating "deployment.yml": Deployment in version "v1" cannot be handled as a Deployment: strict decoding error: unknown field "spec.replica"
 
 ➜  vim deployment.yml
